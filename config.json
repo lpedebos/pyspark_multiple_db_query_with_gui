@@ -1,0 +1,19 @@
+{
+  "databases": [
+    {
+      "url": "jdbc:postgresql://localhost:5432/database1",
+      "user": "example_user",
+      "password": "12345678"
+    },
+    {
+      "url": "jdbc:postgresql://localhost:5432/database2",
+      "user": "example_user",
+      "password": "12345678"
+    },
+    {
+      "url": "jdbc:postgresql://localhost:5432/database3",
+      "user": "example_user",
+      "password": "12345678"
+    }
+  ]
+}

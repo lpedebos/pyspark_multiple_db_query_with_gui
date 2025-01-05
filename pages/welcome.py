@@ -1,3 +1,17 @@
+from navigation import make_sidebar
+import streamlit as st
+
+make_sidebar()
+
+st.write(
+    """
+# 🙋‍♂️ Welcome
+
+Hello and welcome to the main page of the project.
+
+Bellow you will see instructions on how to use it.
+This is the same as the README from the github page.
+
 # pyspark_project
 
 The goal of this project is to provide a simple python script capable of run a query in multiple databases with the same structure and, with the result, run another query on top of that.
@@ -56,3 +70,6 @@ Because of that, keep in mind that is important to work with optimized execution
 The results on the second query run will the on the file "results.csv" on the root directory of the project.
 If there is already a file with this name, it will be overwritten. Be careful to move your resultd to another file or directory after each run.
 If there is no file with this name, it will be created.
+
+"""
+)
