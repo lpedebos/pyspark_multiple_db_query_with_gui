@@ -12,6 +12,6 @@ Now all the steps can be done on the interface.
 
 ## To do
 
-1 - add other databases support;
-2 - add database configuration screen;
+1 - add other databases support;\
+2 - add database configuration screen;\
 3 - add multi-thread for database queries (right now the query on databases is sequential).
