@@ -1,7 +1,7 @@
 {
   "databases": [
     {
-      "url": "jdbc:postgresql://localhost:5432/database1",
+      "url": "jdbc:postgresql://127.0.0.1:5432/database1",
       "user": "example_user",
       "password": "12345678"
     },
