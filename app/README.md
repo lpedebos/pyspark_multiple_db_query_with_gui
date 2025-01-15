@@ -20,3 +20,11 @@ Inside the "app" folder:\
 2 - run the command "docker run -p 8501:8501 --network="host" pyspark_multiple_db" --> this will run the docker image;\
 2.1 - you can access the application on your favorite browser in the address "localhost:8501";\
 2.2 - the '--network="host"' parameter will make possible for your docker container to access databases that are running on you localhost, but not inside the container. It's noit mandatory and, perhaps, you will need to remove it.
+
+---------------------------
+
+## To do
+
+1 - add other databases support;\
+2 - add database configuration screen;\
+3 - add multi-thread for database queries (right now the query on databases is sequential).
