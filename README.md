@@ -9,3 +9,9 @@ Now all the steps can be done on the interface.
 3 - Run "streamlit run streamlit_app.py". This will open a local server. you can access it through the browser on port 8502;\
 4 - Login with default credentials;\
 5 - Use the lateral menu to go through every step.
+
+## To do
+
+1 - add other databases support;\
+2 - add database configuration screen;\
+3 - add multi-thread for database queries (right now the query on databases is sequential).
