@@ -2,7 +2,9 @@ This project is a fork from the original project "https://github.com/lpedebos/py
 
 Now all the steps can be done on the interface.
 
-## Steps to use
+You have two options to use it: dockerized and non-dockerized mode.
+
+## Steps to use (non-docker)
 
 1 - Download the code;\
 2 - Install the dependencies (including java);\
