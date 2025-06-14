@@ -1,27 +1,25 @@
 import streamlit as st
-from time import sleep
-from navigation import make_sidebar
+from utils.sidebar import init_theme
 
-make_sidebar()
+st.set_page_config(page_title="Login", page_icon="🔐")
 
-st.title("Welcome to The Pyspark PostgreSQL Data Extractor (PPDE)")
+init_theme()
 
-st.divider()
+if "logged_in" not in st.session_state:
+    st.session_state.logged_in = False
 
-st.write("Please log in to continue (username `postgres`, password `rules`).")
+st.title("🔐 Login")
 
-username = st.text_input("Username")
-password = st.text_input("Password", type="password")
+if not st.session_state.logged_in:
+    username = st.text_input("Username")
+    password = st.text_input("Password", type="password")
 
-if st.button("Log in", type="primary"):
-    if username == "postgres" and password == "rules":
-        st.session_state.logged_in = True
-        st.success("Logged in successfully!")
-        sleep(0.5)
-        st.switch_page("pages/welcome.py")
-    else:
-        st.error("Incorrect username or password")
-st.divider()
-url = "https://github.com/lpedebos/pyspark_multiple_db_query"
-st.write("[🐈‍⬛   Github reference page](%s)." % url)
-
+    if st.button("Login"):
+        if username == "admin" and password == "password":  # Replace with real logic
+            st.session_state.logged_in = True
+            st.success("Login successful!")
+            st.switch_page("pages/welcome.py")
+        else:
+            st.error("Invalid credentials")
+else:
+    st.switch_page("pages/welcome.py")

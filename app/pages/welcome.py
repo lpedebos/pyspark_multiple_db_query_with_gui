@@ -1,7 +1,15 @@
-from navigation import make_sidebar
 import streamlit as st
+from utils.sidebar import make_sidebar, init_theme
+
+init_theme()
+
+if not st.session_state.get("logged_in", False):
+  st.switch_page("streamlit_app.py")
 
 make_sidebar()
+
+st.title("Welcome Page")
+
 
 st.write(
     """
