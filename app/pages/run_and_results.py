@@ -1,5 +1,5 @@
-from navigation import make_sidebar
 import streamlit as st
+from utils.sidebar import make_sidebar, init_theme
 import subprocess
 import sys
 import logging
@@ -8,6 +8,12 @@ from contextlib import contextmanager, redirect_stdout
 from io import StringIO 
 from time import sleep
 from threading import current_thread
+
+if not st.session_state.get("logged_in", False):
+    st.switch_page("streamlit_app.py")
+
+
+init_theme()
 
 make_sidebar()
 
