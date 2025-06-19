@@ -26,5 +26,5 @@ Inside the "app" folder:\
 ## To do
 
 1 - add other databases support;\
-2 - add database configuration screen;\
+2 - add database configuration screen; ✔️ \
 3 - add multi-thread for database queries (right now the query on databases is sequential).
