@@ -1,6 +1,14 @@
 import streamlit as st
 import json
 import os
+from utils.sidebar import make_sidebar, init_theme
+
+init_theme()
+
+if not st.session_state.get("logged_in", False):
+  st.switch_page("streamlit_app.py")
+
+make_sidebar()
 
 CONFIG_PATH = "config.json"
 

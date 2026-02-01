@@ -10,7 +10,7 @@ You have two options to use it: dockerized and non-dockerized mode.
 2 - Install the dependencies (including java);\
 2.1 - Export $JAVA_HOME;
 3 - Run "streamlit run streamlit_app.py". This will open a local server. you can access it through the browser on port 8502;\
-4 - Login with default credentials;\
+4 - Login with default credentials: login = "admin" and password = "password";\
 5 - Use the lateral menu to go through every step.
 
 ---------------------------
@@ -20,10 +20,14 @@ You have two options to use it: dockerized and non-dockerized mode.
 Inside the "app" folder:\
 1 - run the command "docker build -t pyspark_multiple_db ." --> this will build a docker image named "pyspark_multiple_db";\
 2 - run the command "docker run -p 8501:8501 --network="host" pyspark_multiple_db" --> this will run the docker image;\
-2.1 - you can access the application on your favorite browser in the address "localhost:8501";\
-2.2 - the '--network="host"' parameter will make possible for your docker container to access databases that are running on you localhost, but not inside the container. It's noit mandatory and, perhaps, you will need to remove it.
+2.1 - you can access the application on your favorite browser in the address "localhost:8501" (docker sometimes change it, but it will tell you in which port the program is running);\
+2.2 - **the '--network="host"' parameter will make possible for your docker container to access databases that are running on you localhost, but not inside the container. It's noit mandatory and, perhaps, you will need to remove it (specially if the databases are not running in the same machine as the program)**.
 
 ---------------------------
+
+## known bugs
+
+1 - Database editor is currently not working properly. Sometimes it will, sometimes not. Sometimes you just need to click twice to add a new database, sometimes you cannot remove a database. The workdaround it to edit the "config.json" file before building the docker image.
 
 ## To do
 

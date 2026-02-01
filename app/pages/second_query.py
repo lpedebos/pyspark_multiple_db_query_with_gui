@@ -15,7 +15,12 @@ st.write(
 This is the query that will run on distributed databases.
 
 The same query will run on all databases.
+
 So, be aware that all databases must have the same structure (schema, tables, columns, etc), not necessarily the same data.
+
+**The source ("from") on this second query will always be "combined_table" unless you change it on the app code.**
+
+Example: select count(*) from combined_table;
 
 """
 )

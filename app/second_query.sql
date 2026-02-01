@@ -1,1 +1,1 @@
-select count(*) as total from combined_table
+select * from combined_table;

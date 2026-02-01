@@ -2,7 +2,9 @@ import streamlit as st
 from utils.sidebar import make_sidebar, init_theme
 import subprocess
 import sys
+import time
 import logging
+
 
 from contextlib import contextmanager, redirect_stdout
 from io import StringIO 
@@ -34,9 +36,39 @@ st.write("")
 
 if st.button("Execute queries"):
     with st.spinner('Executing... it can take a while'):
-        subprocess.run([f"{sys.executable}", "main.py"])
+
+        # Elementos dinâmicos
+        log_box = st.empty()
+        progress_bar = st.progress(0)
+
+        # Abrindo subprocesso em modo streaming
+        process = subprocess.Popen(
+            [sys.executable, "main.py"],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.DEVNULL,
+            text=True,
+            bufsize=1
+        )
+
+        log_text = ""
+        step_count = 0
+
+        # Lê cada linha assim que ela aparece
+        for line in process.stdout:
+            log_text += line
+            step_count += 1
+
+            # Atualiza caixa de log
+            log_box.text(log_text)
+
+            # Atualiza barra de progresso (exemplo simples)
+            progress_bar.progress(min(step_count % 100, 100) / 100)
+
+            time.sleep(0.05)  # opcional, apenas para suavizar a UI
+
+        process.wait()
+        progress_bar.progress(100)
+
         st.success("Execution finished")
         with open('results.csv', 'r') as f:
-            st.download_button(label='Download CSV', data=f, file_name='results.csv', mime="text/csv") 
-
-
+            st.download_button(label='Download Results in CSV', data=f, file_name='results.csv', mime="text/csv") 

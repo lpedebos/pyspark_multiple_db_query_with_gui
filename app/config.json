@@ -18,7 +18,7 @@
         {
             "url": "jdbc:postgresql://localhost:5432/database4",
             "user": "example_user",
-            "password": "asdfgsdfgsd"
+            "password": "12345678"
         }
     ]
 }
