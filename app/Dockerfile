@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
 
 COPY . .
 
+COPY . /app
+
 RUN export JAVA_HOME="$(dirname $(dirname $(readlink -f $(which java))))"
 
 RUN pip3 install -r requirements.txt

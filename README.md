@@ -19,9 +19,9 @@ You have two options to use it: dockerized and non-dockerized mode.
 
 Inside the "app" folder:\
 1 - run the command "docker build -t pyspark_multiple_db ." --> this will build a docker image named "pyspark_multiple_db";\
-2 - run the command "docker run -p 8501:8501 --network="host" pyspark_multiple_db" --> this will run the docker image;\
+2 - run the command "docker run -p 8501:8501 pyspark_multiple_db" --> this will run the docker image;\
 2.1 - you can access the application on your favorite browser in the address "localhost:8501" (docker sometimes change it, but it will tell you in which port the program is running);\
-2.2 - **the '--network="host"' parameter will make possible for your docker container to access databases that are running on you localhost, but not inside the container. It's noit mandatory and, perhaps, you will need to remove it (specially if the databases are not running in the same machine as the program)**.
+2.2 - **the '--network="host"' parameter will make possible for your docker container to access databases that are running on you localhost, but not inside the container. It's noit mandatory but can help sometimes. If you are encountering problems in poiting the program to local databases, try running "docker run -p 8501:8501 --network="host" pyspark_multiple_db"**. 
 
 ---------------------------
 

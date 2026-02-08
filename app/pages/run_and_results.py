@@ -4,6 +4,7 @@ import subprocess
 import sys
 import time
 import logging
+import os
 
 
 from contextlib import contextmanager, redirect_stdout
@@ -43,9 +44,9 @@ if st.button("Execute queries"):
 
         # Abrindo subprocesso em modo streaming
         process = subprocess.Popen(
-            [sys.executable, "main.py"],
+            [sys.executable, "-u", "main.py"],
             stdout=subprocess.PIPE,
-            stderr=subprocess.DEVNULL,
+            stderr=subprocess.PIPE,
             text=True,
             bufsize=1
         )
@@ -70,5 +71,5 @@ if st.button("Execute queries"):
         progress_bar.progress(100)
 
         st.success("Execution finished")
-        with open('results.csv', 'r') as f:
+        with open(os.path.join(os.getcwd(), 'results.csv'), 'r') as f:
             st.download_button(label='Download Results in CSV', data=f, file_name='results.csv', mime="text/csv") 
