@@ -70,6 +70,6 @@ if st.button("Execute queries"):
         process.wait()
         progress_bar.progress(100)
 
-        st.success("Execution finished")
-        with open(os.path.join(os.getcwd(), 'results.csv'), 'r') as f:
-            st.download_button(label='Download Results in CSV', data=f, file_name='results.csv', mime="text/csv") 
+    st.success("Execution finished")
+    with open(os.path.join(os.getcwd(), 'results.csv'), 'r') as f:
+        st.download_button(label='Download Results in CSV', data=f, file_name='results.csv', mime="text/csv") 
