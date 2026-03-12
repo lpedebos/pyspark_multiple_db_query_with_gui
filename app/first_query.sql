@@ -1,1 +1,1 @@
-select * from public.example_table
+select * from public.example

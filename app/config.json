@@ -1,24 +1,28 @@
 {
     "databases": [
         {
-            "url": "jdbc:postgresql://127.0.0.1:5432/database1",
-            "user": "example_user",
-            "password": "12345678"
+            "url": "jdbc:postgresql://127.0.0.1:5432/postgres",
+            "user": "user",
+            "password": "password",
+            "database_name": "db_1"
         },
         {
-            "url": "jdbc:postgresql://localhost:5432/database2",
-            "user": "example_user",
-            "password": "12345678"
+            "url": "jdbc:postgresql://127.0.0.1:5432/postgres",
+            "user": "user",
+            "password": "password",
+            "database_name": "db_2"
         },
         {
-            "url": "jdbc:postgresql://localhost:5432/database3",
-            "user": "example_user",
-            "password": "12345678"
+            "url": "jdbc:postgresql://127.0.0.1:5432/postgres",
+            "user": "user",
+            "password": "password",
+            "database_name": "db_3"
         },
         {
-            "url": "jdbc:postgresql://localhost:5432/database4",
-            "user": "example_user",
-            "password": "12345678"
+            "url": "jdbc:postgresql://127.0.0.1:5432/postgres",
+            "user": "user",
+            "password": "password",
+            "database_name": "db_4"
         }
     ]
 }
